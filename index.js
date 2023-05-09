@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-const defURL = 'https://voting-app-ujoi.onrender.com';
+const defURL = 'https://voting-app-ft6c.onrender.com';
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
