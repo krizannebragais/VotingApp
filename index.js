@@ -10,7 +10,7 @@ const io = socketio(server);
 const defURL = 'https://voting-app-ujoi.onrender.com';
 
 // Set the views directory
-app.set('views', path.join(__dirname, 'views'));
+app.set('Views', path.join(__dirname, 'Views'));
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
