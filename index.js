@@ -1,12 +1,16 @@
 const express = require('express');
 const http = require('http');
 const socketio = require('socket.io');
+const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
 const defURL = 'https://voting-app-ujoi.onrender.com';
+
+// Set the views directory
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
