@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>This or That!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <%- include('../templates/header.ejs'); %>
+  <link rel="icon" href="favicon.png">
+  <script src="socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+  	<span hidden id="span_url"><%= socketURL %></span>
+  	<h1 style="text-align: center; margin-top: 20px; position: relative; color: whitesmoke; font-size: 40px;">Are you a beach or mountain person?</h1>
+ 	<div class="container">
+ 		<div class="left">
+			<h1 style="margin-bottom: 30px;">Beach</h1>
+ 			<img src="https://a.cdn-hotels.com/gdcs/production182/d660/7fe239d2-a8ae-4bc2-80c5-ab80064977b9.jpg">
+ 			<button type="vote" id="btn_beach" placeholder="Vote"><span>Submit</span></button>
+ 		</div>
+ 		<div class="right">
+			<h1 style="margin-bottom: 30px;">Mountain</h1>
+ 			<img src="https://media.istockphoto.com/id/1453838542/photo/last-light-on-mount-sneffels.jpg?b=1&s=170667a&w=0&k=20&c=4P6Cj7FBsBYPrbyksF_Olri076cqzwd_twPf4M7fGrM=">
+ 			<button type="vote" id="btn_mountain" placeholder="Vote"><span>Submit</span></button>
+ 		</div>
+	</div>
+	<script type="text/javascript">
+		var socket= io.connect($("#span_url").html());
+
+		$("#btn_beach").click(function(){
+			socket.emit('vote_beach', '1');
+			socket.emit('vote_mountain', '0');
+			alert("Vote for BEACH");
+		});
+		$("#btn_mountain").click(function(){
+			socket.emit('vote_beach', '0');
+			socket.emit('vote_mountain', '1');
+			alert("Vote for MOUNTAIN");
+		});
+	</script>
+</body>
+</html>
