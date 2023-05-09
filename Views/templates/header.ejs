@@ -1,0 +1,115 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	color: rgb(250, 239, 245);
+	font-family: 'Montserrat', sans-serif;
+	background-image: url('https://rare-gallery.com/uploads/posts/3003728-2000x1315-beach-landscape-mountain-nature-rainbow-sand-sea-vegetation-water.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  	background-size: cover;
+}
+
+.container{
+	margin: 20px auto;
+	width: 90%;
+	height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.left{
+	box-shadow: rgba(59, 67, 145, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+	background: rgb(87, 115, 165);
+	padding: 20px;
+	width: 500px;
+	height: 80%;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-right: 50px;
+	border-radius: 20px;
+}
+.right{
+	box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+	background: rgb(16, 110, 71);
+	padding: 20px;
+	width: 500px;
+	height: 80%;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+}
+.right img{
+	border-radius: 30px;
+	height: 60%;
+	width: 90%
+}
+.left img{
+	border-radius: 30px;
+	height: 60%;
+	width: 90%
+}
+.container button{
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+	border: none;
+	padding: 15px 35px;
+	top: 85%;
+	position: absolute;
+	background-color: rgb(193, 202, 143);
+	color: rgb(61, 81, 146);
+	transition: .3s ease-in-out;
+	border-radius: 30px;
+}
+span{
+	font-size: 15px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	color: rgb(13, 14, 14);
+}
+#span_mountain{
+	border-radius: 25px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+	border: none;
+	padding: 20px 50px;
+	top: 85%;
+	position: absolute;
+	background-color: rgb(16, 110, 71);
+	color: white;
+	transition: .3s ease-in-out;
+}
+#span_beach{
+	border-radius: 25px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+	border: none;
+	padding: 20px 50px;
+	top: 85%;
+	position: absolute;
+	background-color: rgb(87, 115, 165);
+	color: white;
+	transition: .3s ease-in-out;
+}
+button:hover{
+	cursor: pointer;
+	transform: scale(1.2);
+}
+#btn_beach:hover span{
+	color: white;
+}
+#btn_beach:hover{
+	background-color: rgb(90, 151, 207);
+}
+#btn_mountain:hover span{
+	color: white;
+}
+#btn_mountain:hover{
+	background-color: rgb(55, 146, 74);
+}
+</style>
