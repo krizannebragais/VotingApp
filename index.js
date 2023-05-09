@@ -1,35 +1,36 @@
-var express = require("express")
-var app = express();
-
+const express = require('express');
 const http = require('http');
-const server = require('http').Server(app);
-const io = require('socket.io')(server);
-// const PORT = process.end.PORT || 8000;
+const socketio = require('socket.io');
 
-const defURL = "http://localhost:8000/"
+const app = express();
+const server = http.createServer(app);
+const io = socketio(server);
+
+const defURL = 'https://voting-app-ujoi.onrender.com';
 
 app.use(express.static('public'));
+app.set('view engine', 'ejs');
 
-app.set("view engine", "ejs");
-
-app.get("/vote", function(req, res){
-res.render("pages/vote", {socketURL:defURL});
-});
-app.get("/result", function(req, res){
-res.render("pages/result", {socketURL:defURL});
+app.get('/vote', function(req, res) {
+  res.render('pages/vote', { socketURL: defURL });
 });
 
-io.sockets.on('connection', function(socket){
-	socket.on('vote_beach', function(vote){
-	io.emit('vote_beach', vote);
-	});
-
-	socket.on('vote_mountain', function(vote){
-	io.emit('vote_mountain', vote);
-	});
+app.get('/result', function(req, res) {
+  res.render('pages/result', { socketURL: defURL });
 });
 
-server.listen(8000);
-console.log("server is listening on port: 8000");
+io.on('connection', function(socket) {
+  socket.on('vote_beach', function(vote) {
+    io.emit('vote_beach', vote);
+  });
 
+  socket.on('vote_mountain', function(vote) {
+    io.emit('vote_mountain', vote);
+  });
+});
 
+const port = process.env.PORT || 8000;
+
+server.listen(port, function() {
+  console.log('server is listening on port:', port);
+});
