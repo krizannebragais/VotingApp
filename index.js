@@ -6,7 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-const defURL = 'https://voting-app-ft6c.onrender.com';
+const defURL = 'https://voting-app-grp12.onrender.com';
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -29,6 +29,6 @@ io.on('connection', function(socket) {
   });
 });
 
-server.listen(3000, () => {
-  console.log('Server listening on port 3000');
+server.listen(8000, () => {
+  console.log('Server listening on port 8000');
 });
