@@ -11,8 +11,8 @@ const defURL = 'https://voting-app-grp12.onrender.com';
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.get('/vote', function(req, res) {
-  res.render('pages/vote', { socketURL: defURL });
+app.get('/', function(req, res) { // Updated route
+  res.render('pages/vote', { socketURL: defURL }); // Render vote.ejs
 });
 
 app.get('/result', function(req, res) {
